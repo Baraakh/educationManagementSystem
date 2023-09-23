@@ -7,13 +7,12 @@
 int main()
 {
     
-    clsCourse newCourse = clsCourse::getAddNewCourseObject("CS112");
-    newCourse.courseName = "Prog 2";
-    newCourse.courseInstructor = "Morad";
 
-    if (newCourse.save() == clsCourse::enResults::svSucceded)
+    clsCourse newCourse = clsCourse::getAddNewCourseObject("CS112");
+
+    if (newCourse.deleteCourse())
     {
-        cout << "The course had been created successfully thank you :-)" << endl;
+        cout << "The course had been deleted successfully thank you :-)" << endl;
     }
     else
     {

@@ -125,7 +125,16 @@ public:
 
 	}
 
-	// ================= creat isDoctorExist method later ======================== 
+	bool isEmpty()
+	{
+		return _Mode == enMode::EmptyMode;
+	}
+
+	static bool isDoctorExist(std::string id)
+	{
+		clsDoctor doctor = clsDoctor::find(id);
+		return (!doctor.isEmpty());
+	}
 
 };
 

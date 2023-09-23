@@ -16,6 +16,8 @@ private:
 	enMode _Mode;
 	std::string _CourseCode, _CourseName, _CourseInstructor;
 
+	bool _MarkedForDelete = false;
+
 	static clsCourse _ConvertRecordLineToObject(std::string record)
 	{
 		std::vector <std::string> vRecordData = clsString::Split(record, "#//#");
@@ -54,7 +56,6 @@ private:
 
 		return vCourses;
 	}
-
 	static bool _AddCourseDataLineToDB(std::string stDataLine)
 	{
 		std::fstream coursesDB;
@@ -68,6 +69,46 @@ private:
 		}
 
 		false;
+	}
+
+	bool _SaveCourseDateToDB(std::vector <clsCourse>& vCourses)
+	{
+		std::fstream coursesDB;
+		coursesDB.open("DB/courses.txt", std::ios::out);
+
+		if (coursesDB.is_open())
+		{
+			std::string record;
+			for (clsCourse& course : vCourses)
+			{
+				if (!course._MarkedForDelete)
+				{
+					record = _ConvertObjectToRecordLine(course);
+					coursesDB << record << endl;
+				}	
+			}
+
+			coursesDB.close();
+			return true;
+		}
+
+		return false;
+	}
+		 
+	bool _Update()
+	{
+		std::vector <clsCourse> vCourses = _LoadAllCoursesFromDB();
+
+		for (clsCourse& course : vCourses)
+		{
+			if (course.courseCode == _CourseCode)
+			{
+				course = *this;
+				break;
+			}
+		}
+
+		return _SaveCourseDateToDB(vCourses);
 	}
 
 	bool _AddNew()
@@ -174,13 +215,19 @@ public:
 		}
 		case enMode::UpdateMode:
 		{
-			return enResults::svSucceded;
+			// write here to update
+			if (_Update())
+			{
+				return enResults::svSucceded;
+			}
+
+			return enResults::svFaildUnableToSave;
 		}
 		case enMode::AddNewMode:
 		{
 			if (clsCourse::isCourseExist(_CourseCode))
 			{
-				return enResults::svFailedEmptyObject;	
+				return enResults::svFailedUserExists;	
 			}
 			else
 			{
@@ -201,6 +248,35 @@ public:
 		clsCourse course = clsCourse::find(courseCode);
 
 		return (!course.isEmpty());
+	}
+	
+	bool deleteCourse()
+	{
+		if (isEmpty() || _Mode == enMode::AddNewMode) return false;
+
+		std::vector <clsCourse> vCourses = _LoadAllCoursesFromDB();
+
+		for (clsCourse& course : vCourses)
+		{
+			if (course.courseCode == _CourseCode)
+			{
+				course._MarkedForDelete = true;
+				break;
+			}
+		}
+
+		if (_SaveCourseDateToDB(vCourses))
+		{
+			*this = _GetEmptyCourseObject();
+			return true;
+		}
+
+		return false;
+	}
+
+	static std::vector <clsCourse> getAllCoursesFromDB()
+	{
+		return _LoadAllCoursesFromDB();
 	}
 
 };

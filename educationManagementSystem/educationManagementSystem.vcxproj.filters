@@ -47,11 +47,11 @@
     <ClInclude Include="clsDoctor.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
-    <ClInclude Include="clsCourse.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="clsPerson.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clsCourse.h">
+      <Filter>Header Files\Core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

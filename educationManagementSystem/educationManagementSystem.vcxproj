@@ -129,6 +129,17 @@
   <ItemGroup>
     <ClCompile Include="educationManagementSystem.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="clsCourse.h" />
+    <ClInclude Include="clsDate.h" />
+    <ClInclude Include="clsDoctor.h" />
+    <ClInclude Include="clsInputValidate.h" />
+    <ClInclude Include="clsLoginScreen.h" />
+    <ClInclude Include="clsPerson.h" />
+    <ClInclude Include="clsScreen.h" />
+    <ClInclude Include="clsString.h" />
+    <ClInclude Include="clsUtil.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

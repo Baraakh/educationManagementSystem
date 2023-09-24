@@ -152,15 +152,10 @@ public:
 
 	__declspec(property(get = getCourseName, put = setCourseName)) std::string courseName;
 
-	// == must see them later for (entity integrity) problems====================
-
 	std::string getCourseInstructor()
 	{
 		return _CourseInstructor;
 	}
-
-
-	// == must see them later for (entity integrity) problems====================
 
 	void setCourseInstructorID(std::string courseInstructorID)
 	{
@@ -289,7 +284,7 @@ public:
 		return _LoadAllCoursesFromDB();
 	}
 
-	/*static std::vector <clsCourse> getInstructorAllCoursesFromDB(std::string ID)
+	static std::vector <clsCourse> getInstructorAllCoursesFromDB(std::string ID)
 	{
 		std::vector <clsCourse> vInstructorCourses;
 
@@ -301,22 +296,19 @@ public:
 			std::string line;
 			while (getline(coursesDB, line))
 			{
-
 				clsCourse course = _ConvertRecordLineToObject(line);
 
-				if (course.courseInstructor)
+				if (course.courseInstructorID == ID)
 				{
-
+					vInstructorCourses.push_back(course);
 				}
-				vInstructorCourses.push_back(course);
 			}
 
 			coursesDB.close();
 		}
 
-		return vCourses;
-
-	}*/
+		return vInstructorCourses;
+	}
 
 };
 

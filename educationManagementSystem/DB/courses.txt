@@ -1,2 +1,17 @@
-CS111#//#Prog 1#//#Hussien Samy
-CS112#//#Prog 2#//#Morad Ismail
+CS101#//#Introduction to Computer Science#//#Sarah Johnson
+CS201#//#Data Structures and Algorithms#//#Michael Smith
+CS301#//#Database Management Systems#//#Jennifer Davis
+CS401#//#Operating Systems#//#David Wilson
+CS501#//#Machine Learning#//#Emily Brown
+CS601#//#Web Development#//#Matthew Lee
+CS701#//#Artificial Intelligence#//#Laura Martinez
+CS801#//#Computer Networks#//#Daniel Anderson
+CS901#//#Software Engineering#//#Olivia Garcia
+CS111#//#Programming 1#//#Hussien Samy
+CS222#//#Programming 2#//#Amanda Jones
+CS333#//#Computer Graphics#//#Thomas White
+CS444#//#Cybersecurity#//#Sophia Clark
+CS555#//#Mobile App Development#//#William Turner
+CS666#//#Robotics#//#Ella Martin
+CS449#//#Multimedia Systems#//#khalil Ahmad
+CS102#//#Algebra 1#//#khalil Ahmad

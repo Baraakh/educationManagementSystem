@@ -11,13 +11,13 @@ protected:
 
 	static void _DrawScreenHeader(std::string title, std::string subTitle = "")
 	{
-		clsUtil::printCenterText("______________________________________");
+		clsUtil::printCenterText("--------------------------------------");
 		clsUtil::printCenterText(title);
 		if (subTitle != "")
 		{
 			clsUtil::printCenterText(subTitle);
 		}
-		clsUtil::printCenterText("______________________________________");
+		clsUtil::printCenterText("--------------------------------------");
 	}
 
 };

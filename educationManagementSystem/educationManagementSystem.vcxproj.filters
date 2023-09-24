@@ -19,6 +19,12 @@
     <Filter Include="Header Files\Core">
       <UniqueIdentifier>{dea2bd87-fb44-4143-81f0-84c84a7012a2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\doctor">
+      <UniqueIdentifier>{d9b835ad-946a-4327-8d8e-056574e9cab2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\doctor\course">
+      <UniqueIdentifier>{bd370e27-c59f-46fd-9d39-f053dc3d2a77}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="educationManagementSystem.cpp">
@@ -52,6 +58,15 @@
     </ClInclude>
     <ClInclude Include="clsCourse.h">
       <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="clsDoctorMainScreen.h">
+      <Filter>Header Files\doctor</Filter>
+    </ClInclude>
+    <ClInclude Include="clsCourseListScreen.h">
+      <Filter>Header Files\doctor\course</Filter>
+    </ClInclude>
+    <ClInclude Include="clsCreateNewCourseScreen.h">
+      <Filter>Header Files\doctor\course</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

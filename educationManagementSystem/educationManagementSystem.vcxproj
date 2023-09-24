@@ -131,8 +131,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clsCourse.h" />
+    <ClInclude Include="clsCourseListScreen.h" />
+    <ClInclude Include="clsCreateNewCourseScreen.h" />
     <ClInclude Include="clsDate.h" />
     <ClInclude Include="clsDoctor.h" />
+    <ClInclude Include="clsDoctorMainScreen.h" />
     <ClInclude Include="clsInputValidate.h" />
     <ClInclude Include="clsLoginScreen.h" />
     <ClInclude Include="clsPerson.h" />

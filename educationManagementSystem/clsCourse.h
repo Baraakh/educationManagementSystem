@@ -28,7 +28,7 @@ private:
 	{
 		std::string recordLine = "";
 
-		recordLine += course.courseCode + delim;
+		recordLine += course.getCourseCode() + delim;
 		recordLine += course.courseName + delim;
 		recordLine += course.courseInstructor;
 
@@ -101,7 +101,7 @@ private:
 
 		for (clsCourse& course : vCourses)
 		{
-			if (course.courseCode == _CourseCode)
+			if (course.getCourseCode() == _CourseCode)
 			{
 				course = *this;
 				break;
@@ -131,17 +131,10 @@ public:
 		_CourseInstructor = courseInstructor;
 	}
 
-	void setCourseCode(std::string courseCode)
-	{
-		_CourseCode = courseCode;
-	}
-
 	std::string getCourseCode()
 	{
 		return _CourseCode;
 	}
-
-	__declspec(property(get = getCourseCode, put = putCourseCode)) std::string courseCode;
 
 	void setCourseName(std::string courseName)
 	{
@@ -180,7 +173,7 @@ public:
 			{
 				clsCourse course = _ConvertRecordLineToObject(line);
 
-				if (course.courseCode == courseCode)
+				if (course.getCourseCode() == courseCode)
 				{
 					coursesDB.close();
 					return course;
@@ -203,7 +196,7 @@ public:
 		return _Mode == enMode::EmptyMode;
 	}
 
-	enum enResults {svFailedEmptyObject = 0, svSucceded = 1, svFailedUserExists = 2, svFaildUnableToSave = 3};
+	enum enResults {svFailedEmptyObject = 0, svSucceded = 1, svFailedCourseExists = 2, svFaildUnableToSave = 3};
 
 	enResults save()
 	{
@@ -227,7 +220,7 @@ public:
 		{
 			if (clsCourse::isCourseExist(_CourseCode))
 			{
-				return enResults::svFailedUserExists;	
+				return enResults::svFailedCourseExists;	
 			}
 			else
 			{
@@ -258,7 +251,7 @@ public:
 
 		for (clsCourse& course : vCourses)
 		{
-			if (course.courseCode == _CourseCode)
+			if (course.getCourseCode() == _CourseCode)
 			{
 				course._MarkedForDelete = true;
 				break;

@@ -2,22 +2,12 @@
 
 #include"clsLoginScreen.h";
 
-#include "clsCourse.h";
+#include "clsDoctorMainScreen.h";
 
 int main()
 {
     
-
-    clsCourse newCourse = clsCourse::getAddNewCourseObject("CS112");
-
-    if (newCourse.deleteCourse())
-    {
-        cout << "The course had been deleted successfully thank you :-)" << endl;
-    }
-    else
-    {
-        cout << "Sorry :-(" << endl;
-    }
+    clsDoctorMainScreen::showDoctorMainScreen();
 
     system("pause>0");
     return 0;

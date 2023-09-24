@@ -68,5 +68,8 @@
     <ClInclude Include="clsCreateNewCourseScreen.h">
       <Filter>Header Files\doctor\course</Filter>
     </ClInclude>
+    <ClInclude Include="clsViewCourseMenue.h">
+      <Filter>Header Files\doctor\course</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

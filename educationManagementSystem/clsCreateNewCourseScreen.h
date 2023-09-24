@@ -14,41 +14,8 @@ class clsCreateNewCourseScreen : protected clsScreen
 {
 private:
 
-	static void _ReadCourseInfo(clsCourse& course)
+	static clsCourse _ReadCourseInfoAndCreate()
 	{
-		std::cout << "\nEnter Course Name: ";
-		course.courseName = clsInputValidate::ReadString();
-
-		std::string DoctorID = "";
-
-		std::cout << "\nEnter Course Instructor ID: ";
-		DoctorID = clsInputValidate::ReadString();
-
-		while (!clsDoctor::isDoctorExist(DoctorID))
-		{
-			std::cout << "\nTheir is no doctor with this ID, Enter a valid doctor ID: ";
-			DoctorID = clsInputValidate::ReadString();
-		}
-
-		course.courseInstructor = (clsDoctor::find(DoctorID)).fullName(); // pull the instructor fullname from the DB
-	}
-
-	static void _PrintCourseInfo(clsCourse course)
-	{
-		cout << "\nCourse Card:";
-		cout << "\n___________________";
-		cout << "\nFirstName   : " << course.getCourseCode();
-		cout << "\nLastName    : " << course.courseName;
-		cout << "\nFull Name   : " << course.courseInstructor;
-		cout << "\n___________________\n";
-	}
-
-public:
-
-	static void showCreateNewCourseScreen()
-	{
-		_DrawScreenHeader("Create New Course screen");
-
 		std::string courseCode = "";
 
 		std::cout << "\nPlease Enter Course Code : ";
@@ -60,9 +27,43 @@ public:
 			courseCode = clsInputValidate::ReadString();
 		}
 
-		clsCourse newCourse = clsCourse::getAddNewCourseObject(courseCode);
+		std::string courseName = "";
 
-		_ReadCourseInfo(newCourse);
+		std::cout << "\nEnter Course Name: ";
+		courseName = clsInputValidate::ReadString();
+
+		std::string InstructorID = "";
+
+		std::cout << "\nEnter Course Instructor ID: ";
+		InstructorID = clsInputValidate::ReadString();
+
+		while (!clsDoctor::isDoctorExist(InstructorID))
+		{
+			std::cout << "\nTheir is no doctor with this ID, Enter a valid doctor ID: ";
+			InstructorID = clsInputValidate::ReadString();
+		}
+
+		return clsCourse::getAddNewCourseObject(courseCode, courseName, InstructorID);	
+		
+	}
+
+	static void _PrintCourseInfo(clsCourse course)
+	{
+		cout << "\nCourse Card:";
+		cout << "\n___________________";
+		cout << "\nFirstName   : " << course.getCourseCode();
+		cout << "\nLastName    : " << course.courseName;
+		cout << "\nFull Name   : " << course.getCourseInstructor();
+		cout << "\n___________________\n";
+	}
+
+public:
+
+	static void showCreateNewCourseScreen()
+	{
+		_DrawScreenHeader("Create New Course screen");
+		
+		clsCourse newCourse = _ReadCourseInfoAndCreate();
 
 		clsCourse::enResults saveResult = newCourse.save();
 

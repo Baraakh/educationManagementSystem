@@ -1,17 +1,19 @@
-CS101#//#Introduction to Computer Science#//#Sarah Johnson
-CS201#//#Data Structures and Algorithms#//#Michael Smith
-CS301#//#Database Management Systems#//#Jennifer Davis
-CS401#//#Operating Systems#//#David Wilson
-CS501#//#Machine Learning#//#Emily Brown
-CS601#//#Web Development#//#Matthew Lee
-CS701#//#Artificial Intelligence#//#Laura Martinez
-CS801#//#Computer Networks#//#Daniel Anderson
-CS901#//#Software Engineering#//#Olivia Garcia
-CS111#//#Programming 1#//#Hussien Samy
-CS222#//#Programming 2#//#Amanda Jones
-CS333#//#Computer Graphics#//#Thomas White
-CS444#//#Cybersecurity#//#Sophia Clark
-CS555#//#Mobile App Development#//#William Turner
-CS666#//#Robotics#//#Ella Martin
-CS449#//#Multimedia Systems#//#khalil Ahmad
-CS102#//#Algebra 1#//#khalil Ahmad
+CS101#//#Introduction to Computer Science#//#01667890
+CS201#//#Data Structures and Algorithms#//#00203456
+CS301#//#Database Management Systems#//#00304567
+CS401#//#Operating Systems#//#00405678
+CS501#//#Machine Learning#//#00506789
+CS601#//#Web Development#//#00607890
+CS701#//#Artificial Intelligence#//#00708901
+CS801#//#Computer Networks#//#00809012
+CS901#//#Software Engineering#//#00910123
+CS111#//#Programming 1#//#00102345
+CS222#//#Programming 2#//#01011234
+CS333#//#Computer Graphics#//#01112345
+CS444#//#Cybersecurity#//#01223456
+CS555#//#Mobile App Development#//#01334567
+CS666#//#Robotics#//#01445678
+CS449#//#Multimedia Systems#//#01556789
+CS102#//#Algebra 1#//#01556789
+CS103#//#Calculus 1#//#00102345
+CS104#//#Discrete Mathematics#//#00102345

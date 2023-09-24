@@ -15,7 +15,7 @@ private:
     {
         cout << setw(8) << left << "" << "| " << setw(15) << left << course.getCourseCode();
         cout << "| " << setw(35) << left << course.courseName;
-        cout << "| " << setw(20) << left << course.courseInstructor;
+        cout << "| " << setw(20) << left << course.getCourseInstructor();
     }
 
 public:

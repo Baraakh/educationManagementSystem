@@ -11,6 +11,7 @@
 
 #include "clsCourseListScreen.h";
 #include "clsCreateNewCourseScreen.h";
+#include "clsViewCourseMenue.h";
 
 class clsDoctorMainScreen : protected clsScreen
 {
@@ -41,12 +42,12 @@ private:
 	{
 		system("cls");
 		clsCreateNewCourseScreen::showCreateNewCourseScreen();
-		// something here
 	}
 
-	static void _ShowViewCourse()
+	static void _ShowViewCourseMenu()
 	{
-		// something here
+		system("cls");
+		clsViewCourseMenue::showCourseMenu();
 	}
 
 	static bool _PerformDoctorMainMenuOptions(enDoctorMainMenuOptions option)
@@ -67,7 +68,7 @@ private:
 		}
 		case enDoctorMainMenuOptions::opViewCourse:
 		{
-			_ShowViewCourse();
+			_ShowViewCourseMenu();
 			_GoBackToMainMenu();
 			return true;
 		}

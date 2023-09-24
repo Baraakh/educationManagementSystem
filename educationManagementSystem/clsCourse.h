@@ -7,6 +7,9 @@
 
 #include "clsString.h";
 
+#include "clsDoctor.h";
+
+
 class clsCourse
 {
 private:
@@ -14,7 +17,7 @@ private:
 	enum enMode {EmptyMode = 0, UpdateMode = 1, AddNewMode = 2};
 
 	enMode _Mode;
-	std::string _CourseCode, _CourseName, _CourseInstructor;
+	std::string _CourseCode, _CourseName, _CourseInstructorID, _CourseInstructor;
 
 	bool _MarkedForDelete = false;
 
@@ -30,7 +33,7 @@ private:
 
 		recordLine += course.getCourseCode() + delim;
 		recordLine += course.courseName + delim;
-		recordLine += course.courseInstructor;
+		recordLine += course.courseInstructorID;
 
 		return recordLine;
 	}
@@ -123,12 +126,13 @@ private:
 
 public:
 
-	clsCourse(enMode mode, std::string courseCode, std::string courseName, std::string courseInstructor)
+	clsCourse(enMode mode, std::string courseCode, std::string courseName, std::string courseInstructorID)
 	{
 		_Mode = mode;
 		_CourseCode = courseCode;
 		_CourseName = courseName;
-		_CourseInstructor = courseInstructor;
+		_CourseInstructorID = courseInstructorID;
+		_CourseInstructor = (clsDoctor::find(courseInstructorID)).fullName();
 	}
 
 	std::string getCourseCode()
@@ -148,17 +152,30 @@ public:
 
 	__declspec(property(get = getCourseName, put = setCourseName)) std::string courseName;
 
-	void setCourseInstructor(std::string courseInstructor)
-	{
-		_CourseInstructor = courseInstructor;
-	}
+	// == must see them later for (entity integrity) problems====================
 
 	std::string getCourseInstructor()
 	{
 		return _CourseInstructor;
 	}
 
-	__declspec(property(get = getCourseInstructor, put = setCourseInstructor)) std::string courseInstructor;
+
+	// == must see them later for (entity integrity) problems====================
+
+	void setCourseInstructorID(std::string courseInstructorID)
+	{
+		_CourseInstructorID = courseInstructorID;
+
+		_CourseInstructor = (clsDoctor::find(courseInstructorID)).fullName();
+	}
+
+	std::string getCourseInstructorID()
+	{
+		return _CourseInstructorID;
+	}
+
+	__declspec(property(get = getCourseInstructorID, put = setCourseInstructorID)) std::string courseInstructorID;
+
 
 	static clsCourse find(std::string courseCode)
 	{
@@ -186,9 +203,9 @@ public:
 		return _GetEmptyCourseObject();
 	}
 
-	static clsCourse getAddNewCourseObject(std::string courseCode)
+	static clsCourse getAddNewCourseObject(std::string courseCode, std::string courseName ,std::string courseInstructorID)
 	{
-		return clsCourse(enMode::AddNewMode, courseCode, "", "");
+		return clsCourse(enMode::AddNewMode, courseCode, courseName, courseInstructorID);
 	}
 
 	bool isEmpty()
@@ -271,6 +288,35 @@ public:
 	{
 		return _LoadAllCoursesFromDB();
 	}
+
+	/*static std::vector <clsCourse> getInstructorAllCoursesFromDB(std::string ID)
+	{
+		std::vector <clsCourse> vInstructorCourses;
+
+		std::fstream coursesDB;
+		coursesDB.open("DB/courses.txt", std::ios::in);
+
+		if (coursesDB.is_open())
+		{
+			std::string line;
+			while (getline(coursesDB, line))
+			{
+
+				clsCourse course = _ConvertRecordLineToObject(line);
+
+				if (course.courseInstructor)
+				{
+
+				}
+				vInstructorCourses.push_back(course);
+			}
+
+			coursesDB.close();
+		}
+
+		return vCourses;
+
+	}*/
 
 };
 

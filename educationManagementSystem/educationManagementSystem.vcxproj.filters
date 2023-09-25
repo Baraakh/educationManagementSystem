@@ -71,5 +71,8 @@
     <ClInclude Include="clsViewCourseMenue.h">
       <Filter>Header Files\doctor\course</Filter>
     </ClInclude>
+    <ClInclude Include="clsStudent.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

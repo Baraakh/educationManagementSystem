@@ -141,6 +141,7 @@
     <ClInclude Include="clsPerson.h" />
     <ClInclude Include="clsScreen.h" />
     <ClInclude Include="clsString.h" />
+    <ClInclude Include="clsStudent.h" />
     <ClInclude Include="clsUtil.h" />
     <ClInclude Include="clsViewCourseMenue.h" />
   </ItemGroup>

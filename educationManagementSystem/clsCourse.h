@@ -71,7 +71,7 @@ private:
 			return true;
 		}
 
-		false;
+		return false;
 	}
 
 	bool _SaveCourseDateToDB(std::vector <clsCourse>& vCourses)

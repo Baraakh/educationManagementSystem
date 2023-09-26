@@ -25,6 +25,12 @@
     <Filter Include="Header Files\doctor\course">
       <UniqueIdentifier>{bd370e27-c59f-46fd-9d39-f053dc3d2a77}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\student">
+      <UniqueIdentifier>{d79d44ec-370e-4e2b-9e43-e9d0113268d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\student\courses">
+      <UniqueIdentifier>{d66e0c9f-a146-4329-b045-e5369bb32553}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="educationManagementSystem.cpp">
@@ -73,6 +79,27 @@
     </ClInclude>
     <ClInclude Include="clsStudent.h">
       <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="clsStudentMainScreen.h">
+      <Filter>Header Files\student</Filter>
+    </ClInclude>
+    <ClInclude Include="clsCourseRegisterInCourseScreen.h">
+      <Filter>Header Files\student\courses</Filter>
+    </ClInclude>
+    <ClInclude Include="Global.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="clsListStudentCoursesScreen.h">
+      <Filter>Header Files\student\courses</Filter>
+    </ClInclude>
+    <ClInclude Include="clsViewCourse.h">
+      <Filter>Header Files\student\courses</Filter>
+    </ClInclude>
+    <ClInclude Include="clsGradeReport.h">
+      <Filter>Header Files\student\courses</Filter>
+    </ClInclude>
+    <ClInclude Include="clsCourseViewInfoScreen.h">
+      <Filter>Header Files\student\courses</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

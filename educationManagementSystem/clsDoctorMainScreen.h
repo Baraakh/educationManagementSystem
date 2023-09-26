@@ -19,7 +19,7 @@ private:
 
 	enum enDoctorMainMenuOptions { opListCourses = 1, opCreateCourses = 2, opViewCourse = 3, Logout = 4 };
 
-	static int _ReadOption()
+	static short _ReadOption()
 	{
 		cout << endl << setw(37) << left << "" << "\t Choose what do you want to do? [1 to 4] : ";
 		return clsInputValidate::ReadListNumberBetween(1, 4, "Number is out of range, Choose Number between 1 and 4: ");

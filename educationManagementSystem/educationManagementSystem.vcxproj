@@ -132,18 +132,25 @@
   <ItemGroup>
     <ClInclude Include="clsCourse.h" />
     <ClInclude Include="clsCourseListScreen.h" />
+    <ClInclude Include="clsCourseRegisterInCourseScreen.h" />
+    <ClInclude Include="clsCourseViewInfoScreen.h" />
     <ClInclude Include="clsCreateNewCourseScreen.h" />
     <ClInclude Include="clsDate.h" />
     <ClInclude Include="clsDoctor.h" />
     <ClInclude Include="clsDoctorMainScreen.h" />
+    <ClInclude Include="clsGradeReport.h" />
     <ClInclude Include="clsInputValidate.h" />
+    <ClInclude Include="clsListStudentCoursesScreen.h" />
     <ClInclude Include="clsLoginScreen.h" />
     <ClInclude Include="clsPerson.h" />
     <ClInclude Include="clsScreen.h" />
     <ClInclude Include="clsString.h" />
     <ClInclude Include="clsStudent.h" />
+    <ClInclude Include="clsStudentMainScreen.h" />
     <ClInclude Include="clsUtil.h" />
+    <ClInclude Include="clsViewCourse.h" />
     <ClInclude Include="clsViewCourseMenue.h" />
+    <ClInclude Include="Global.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

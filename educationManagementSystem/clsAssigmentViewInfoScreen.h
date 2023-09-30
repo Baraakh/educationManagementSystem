@@ -9,16 +9,18 @@
 
 #include "clsAssigment.h";
 
+#include "clsListDoctorAssigmentScreen.h";
+#include "clsCreateAssigmentScreen.h";
+
 class clsAssigmentViewInfoScreen : protected clsScreen
 {
 private:
 
 	enum enViewAssigmentInfo { opListAssigments = 1, opCreateAssigment = 2, opViewAssigment = 3, opBack = 4 };
 
-	static void _BackToMainMenu()
+	static void _BackToPreviousScreen()
 	{
-		cout << setw(37) << left << "" << "\n\tPress any key to go back to Main Menue...\n";
-
+		cout << setw(37) << left << "" << "\n\tPress any key to go back to previous screen...\n";
 		system("pause>0");
 	}
 
@@ -34,14 +36,16 @@ private:
 		return clsInputValidate::ReadListNumberBetween(1, 4, "\tNumber is out of range, Choose Number between 1 and 4 : ");
 	}
 
-	static void _ListAssigments()
+	static void _ListAssigments(std::string& courseId)
 	{
 		system("cls");
+		clsListDoctorAssigmentScreen::showListDoctorAssigmentScreen(courseId);
 	}
 
-	static bool _CreateAssigment()
+	static void _CreateAssigment(std::string& courseId)
 	{
 		system("cls");
+		clsCreateAssigmentScreen::showCreateAssigmentScreen(courseId);
 	}
 
 	static bool _ViewAssigment()
@@ -55,12 +59,15 @@ private:
 		{
 		case enViewAssigmentInfo::opListAssigments:
 		{
-			_ListAssigments();
+			_ListAssigments(courseId);
+			_BackToPreviousScreen();
 			return true;
 		}
 		case enViewAssigmentInfo::opCreateAssigment:
 		{
 			// code for later
+			_CreateAssigment(courseId);
+			_BackToPreviousScreen();
 			return true;
 		}
 		case enViewAssigmentInfo::opViewAssigment:
@@ -95,9 +102,11 @@ public:
 			std::cout << endl << setw(37) << left << "" << "\t\t 3 - View Assignment " << endl;
 			std::cout << endl << setw(37) << left << "" << "\t\t 4 - Back " << endl;
 
-			return _PerformAssigmentOption((enViewAssigmentInfo)_ReadOption(), course.getCourseCode());
+			keepRunning = _PerformAssigmentOption((enViewAssigmentInfo)_ReadOption(), course.getCourseCode());
 
 		}
+
+		return keepRunning;
 	}
 
 };

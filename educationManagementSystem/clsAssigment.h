@@ -12,7 +12,7 @@ class clsAssigment
 {
 private:
 
-	enum enMode {EmptyMode = 1, UpdateMode = 2, AddNewMode = 3};
+	enum enMode {EmptyMode = 0, UpdateMode = 1, AddNewMode = 2};
 	
 	enMode _Mode;
 	std::string _AssigmentID, _CourseCode;
@@ -209,7 +209,7 @@ public:
 		{
 		case enMode::EmptyMode:
 		{
-			return enResults::svFaildUnableToSave;
+			return enResults::svFailedEmptyObject;
 		}
 		case enMode::UpdateMode:
 		{

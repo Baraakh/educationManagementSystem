@@ -136,6 +136,7 @@
     <ClInclude Include="clsCourseListScreen.h" />
     <ClInclude Include="clsCourseRegisterInCourseScreen.h" />
     <ClInclude Include="clsCourseViewInfoScreen.h" />
+    <ClInclude Include="clsCreateAssigmentScreen.h" />
     <ClInclude Include="clsCreateNewCourseScreen.h" />
     <ClInclude Include="clsDate.h" />
     <ClInclude Include="clsDoctor.h" />

@@ -24,7 +24,7 @@ public:
     {
 
 
-        vector <clsCourse> vCourse = clsCourse::getAllCoursesFromDB();
+        std::vector <clsCourse> vCourse = clsCourse::getAllCoursesFromDB();
         string Title = "Course List Screen";
         string SubTitle = "(" + to_string(vCourse.size()) + ") Course(s).";
 

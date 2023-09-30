@@ -3,7 +3,9 @@
 #include <iostream>
 #include <string>
 
-#include "clsUtil.h"
+#include "clsUtil.h";
+#include "clsDate.h";
+#include "Global.h";
 
 class clsScreen
 {
@@ -17,6 +19,8 @@ protected:
 		{
 			clsUtil::printCenterText(subTitle);
 		}
+		clsUtil::printCenterText("--------------------------------------");
+		clsUtil::printCenterText("Name: " + currentPerson->fullName() + "\t\tDate: " + clsDate::DateToString(clsDate()));
 		clsUtil::printCenterText("--------------------------------------");
 	}
 

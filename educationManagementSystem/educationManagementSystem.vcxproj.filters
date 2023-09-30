@@ -31,6 +31,9 @@
     <Filter Include="Header Files\student\courses">
       <UniqueIdentifier>{d66e0c9f-a146-4329-b045-e5369bb32553}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\doctor\assigments">
+      <UniqueIdentifier>{a84287f3-8c23-41a6-ac98-f596411d5b5a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="educationManagementSystem.cpp">
@@ -74,9 +77,6 @@
     <ClInclude Include="clsCreateNewCourseScreen.h">
       <Filter>Header Files\doctor\course</Filter>
     </ClInclude>
-    <ClInclude Include="clsViewCourseMenue.h">
-      <Filter>Header Files\doctor\course</Filter>
-    </ClInclude>
     <ClInclude Include="clsStudent.h">
       <Filter>Header Files\Core</Filter>
     </ClInclude>
@@ -100,6 +100,15 @@
     </ClInclude>
     <ClInclude Include="clsCourseViewInfoScreen.h">
       <Filter>Header Files\student\courses</Filter>
+    </ClInclude>
+    <ClInclude Include="clsAssigment.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="clsAssigmentViewInfoScreen.h">
+      <Filter>Header Files\doctor\assigments</Filter>
+    </ClInclude>
+    <ClInclude Include="clsViewCourseMenue.h">
+      <Filter>Header Files\doctor\assigments</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

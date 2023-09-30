@@ -8,6 +8,7 @@
 #include "clsString.h";
 
 #include "clsPerson.h";
+
 #include "clsCourse.h";
 
 class clsStudent : public clsPerson
@@ -72,7 +73,7 @@ private:
 	std::vector <clsCourse> _getAllCoursesStudentIsEnrolledWith()
 	{
 		
-		vector <clsCourse> vStudentEnrolledCourses;
+		std::vector <clsCourse> vStudentEnrolledCourses;
 
 		std::fstream DBStudentsAndCourses;
 		DBStudentsAndCourses.open("DB/studentsAndCourses.txt", std::ios::in);

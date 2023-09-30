@@ -7,8 +7,7 @@
 
 #include "clsString.h";
 
-#include "clsDoctor.h";
-
+#include "clsDoctor.h"
 
 class clsCourse
 {
@@ -312,3 +311,46 @@ public:
 
 };
 
+// cuircular dependancie error these methods must be defined after the clsCourse class
+
+std::vector <clsCourse> clsDoctor::_getAllDoctorCourses()
+{
+	std::vector <clsCourse> vDoctorCourses;
+
+	std::vector <clsCourse> vCourses = clsCourse::getAllCoursesFromDB();
+
+	for (clsCourse& course : vCourses)
+	{
+		if (course.courseInstructorID == _Id)
+		{
+			vDoctorCourses.push_back(course);
+		}
+	}
+
+	return vDoctorCourses;
+}
+
+std::vector <clsCourse> clsDoctor::getDoctorCourses()
+{
+	std::vector <clsCourse> vDoctorCourses;
+
+	if (_Mode == enMode::EmptyMode) return vDoctorCourses;
+
+	vDoctorCourses = _getAllDoctorCourses();
+
+	return vDoctorCourses;
+}
+
+bool clsDoctor::isDoctorForThisCourses(std::string courseCode)
+{
+	if (_Mode == enMode::EmptyMode || !(clsCourse::isCourseExist(courseCode))) return false;
+
+	std::vector <clsCourse> vDoctorCourses = getDoctorCourses();
+
+	for (clsCourse& course : vDoctorCourses)
+	{
+		if (course.getCourseCode() == courseCode) return true;
+	}
+
+	return false;
+}

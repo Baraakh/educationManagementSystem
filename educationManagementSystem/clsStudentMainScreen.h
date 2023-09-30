@@ -69,6 +69,14 @@ private:
 		
 	}
 
+	static void _Logout()
+	{
+		system("cls");
+		currentDoctor = clsDoctor::find("", "");
+		currentStudent = clsStudent::find("", "");
+		currentPerson = &currentDoctor;
+	}
+
 	static bool _PerformStudentMainMenuOptions(enStudentMainMenuOptions option)
 	{
 		switch (option)
@@ -98,6 +106,7 @@ private:
 		}
 		case enStudentMainMenuOptions::opLogout:
 		{
+			_Logout();
 			return false;
 		}
 		}

@@ -13,6 +13,8 @@
 #include "clsCreateNewCourseScreen.h";
 #include "clsViewCourseMenue.h";
 
+#include "Global.h";
+
 class clsDoctorMainScreen : protected clsScreen
 {
 private:
@@ -50,6 +52,14 @@ private:
 		clsViewCourseMenue::showCourseMenu();
 	}
 
+	static void _Logout()
+	{
+		system("cls");
+		currentDoctor = clsDoctor::find("", "");
+		currentStudent = clsStudent::find("", "");
+		currentPerson = &currentDoctor;
+	}
+
 	static bool _PerformDoctorMainMenuOptions(enDoctorMainMenuOptions option)
 	{
 		switch (option)
@@ -69,11 +79,11 @@ private:
 		case enDoctorMainMenuOptions::opViewCourse:
 		{
 			_ShowViewCourseMenu();
-			_GoBackToMainMenu();
 			return true;
 		}
 		case enDoctorMainMenuOptions::Logout:
 		{
+			_Logout();
 			return false;
 		}
 		}

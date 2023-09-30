@@ -130,6 +130,8 @@
     <ClCompile Include="educationManagementSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="clsAssigment.h" />
+    <ClInclude Include="clsAssigmentViewInfoScreen.h" />
     <ClInclude Include="clsCourse.h" />
     <ClInclude Include="clsCourseListScreen.h" />
     <ClInclude Include="clsCourseRegisterInCourseScreen.h" />

@@ -5,9 +5,12 @@
 #include <fstream>
 #include <vector>
 
+#include "clsString.h";
+
 #include "clsPerson.h";
 
-#include "clsString.h";
+// cuircular dependancie error so I must use forward declaration
+class clsCourse;
 
 class clsDoctor : public clsPerson
 {
@@ -24,6 +27,8 @@ private:
 
 		return clsDoctor(enMode::UpdateMode, vRecordData[0], vRecordData[1], vRecordData[2], vRecordData[3], vRecordData[4], vRecordData[5], vRecordData[6]);
 	}
+
+	std::vector <clsCourse> _getAllDoctorCourses();
 
 	static clsDoctor _GetEmptyDoctorObject()
 	{
@@ -136,5 +141,8 @@ public:
 		return (!doctor.isEmpty());
 	}
 
-};
+	std::vector <clsCourse> getDoctorCourses();
 
+	bool isDoctorForThisCourses(std::string courseCode);
+
+};
